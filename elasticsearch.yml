@@ -1,4 +1,5 @@
 cluster.name: "clusteres"
+cluster_uuid: "UHsG0IRERFSG35kIJdBY4w"
 network.host: POD_IP
 node.name: HOSTNAME
 #discovery.zen.ping.multicast.enabled: true
