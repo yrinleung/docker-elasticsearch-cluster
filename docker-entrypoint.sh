@@ -5,7 +5,7 @@ sed -i -e "s/POD_IP/${POD_IP:-'0.0.0.0'}/g" \
        -e "s/HOSTNAME/${HOSTNAME}.${HOSTNAME%-*}.${TENANT_ID}.svc.cluster.local./g" /usr/share/elasticsearch/config/elasticsearch.yml
 
 if [[ $ES_NODES -gt 1 ]];then
-    sed -i '$a\discovery.zen.ping.unicast.hosts: HOSTS' /usr/share/elasticsearch/config/elasticsearch.yml
+    sed -i '$a\discovery.zen.ping.unicast.hosts' /usr/share/elasticsearch/config/elasticsearch.yml
     declare -a hosts
     for i in $(seq $ES_NODES)
       do
