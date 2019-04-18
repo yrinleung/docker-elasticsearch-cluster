@@ -24,7 +24,7 @@ Num_nodes=$(nslookup ${SERVICE_NAME}.${TENANT_ID}.svc.cluster.local | grep "Addr
 Node_ip=$(nslookup ${SERVICE_NAME}.${TENANT_ID}.svc.cluster.local | grep "Address" | grep -v "#53" | awk '{print $2}')
 if [[ ${Num_nodes} -gt 1 ]];then
   HOSTS=[$(echo ${Node_ip} | tr ' ' ',')]
-  sed -i "$a\discovery.zen.ping.unicast.hosts: ${HOSTS}" /usr/share/elasticsearch/config/elasticsearch.yml
+  echo "discovery.zen.ping.unicast.hosts: ${HOSTS}" >> /usr/share/elasticsearch/config/elasticsearch.yml
 fi
 [[ $PAUSE ]] && sleep $PAUSE
     
