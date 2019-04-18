@@ -2,7 +2,8 @@
 [[ $DEBUG ]] && set -x
 
 sed -i -e "s/POD_IP/${POD_IP:-'0.0.0.0'}/g" \
-       -e "s/HOSTNAME/${HOSTNAME}/g" /usr/share/elasticsearch/config/elasticsearch.yml
+       -e "s/HOSTNAME/${HOSTNAME}/g" \
+       -e '$a\discovery.zen.ping.unicast.hosts' /usr/share/elasticsearch/config/elasticsearch.yml
 
 # if [[ ${SERVICE_POD_NUM} -gt 1 ]];then
 #     sed -i '$a\discovery.zen.ping.unicast.hosts' /usr/share/elasticsearch/config/elasticsearch.yml
