@@ -1,4 +1,4 @@
-# ES 
+# ES cluster for Rainbond deployment
 #### 介绍
 适用于 [Rainbond](https://www.rainbond.com/) 的 docker 化集群版 elasticsearch 6.2.3
 
