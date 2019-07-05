@@ -1,4 +1,4 @@
-FROM elastic/elasticsearch:6.2.3
+FROM elastic/elasticsearch:6.8.0
 MAINTAINER dazuimao1990 <guox@goodrain.com>
 COPY elasticsearch.yml /usr/share/elasticsearch/config/elasticsearch.yml
 COPY docker-entrypoint.sh /
